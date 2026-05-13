@@ -228,18 +228,68 @@
     }
 
     /* ===== ABOUT ===== */
+    .about__grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    @media (max-width: 900px) { .about__grid { grid-template-columns: 1fr; gap: 40px; } }
+    .about__photo {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border-radius: 16px;
+      background: var(--wd-graphite);
+      margin: 0;
+    }
+    .about__photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 600ms var(--wd-ease-out);
+    }
+    .about__photo:hover img { transform: scale(1.03); }
     .about__lead {
       font-family: var(--wd-font-display);
-      font-size: clamp(32px, 4.5vw, 64px);
+      font-size: clamp(28px, 3.5vw, 48px);
       line-height: 1.0;
       text-transform: uppercase;
-      max-width: 1040px;
     }
-    .about__body {
-      max-width: 760px;
-      margin-top: 40px;
-    }
+    .about__body { margin-top: 28px; }
     .about__body p + p { margin-top: 20px; }
+
+    /* ===== SPEAKING PROOF ===== */
+    .speaking__recent {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid var(--wd-border);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 14px 18px;
+      font-family: var(--wd-font-body);
+    }
+    .speaking__recent .label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--wd-text-muted);
+    }
+    .speaking__recent .venue {
+      font-family: var(--wd-font-display);
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1;
+      text-transform: uppercase;
+      color: var(--wd-text-secondary);
+    }
+    .speaking__recent .dot {
+      color: var(--wd-text-muted);
+      font-size: 14px;
+    }
 
     /* ===== STATS ===== */
     .stats {
@@ -402,14 +452,20 @@
       <p class="overline">About</p>
       <h2 class="display section__title">Who I am</h2>
 
-      <p class="display about__lead">Building an agency that's reshaping the communications market of Central Asia.</p>
-
-      <div class="about__body">
-        <p class="body-lg">
-          12+ years in marketing and creative. Co-founder of <strong>We Digital</strong> — one of the largest
-          communications agencies in Uzbekistan. We work across SMM, influencer marketing,
-          UGC, special projects, CSR and creative for country-scale brands.
-        </p>
+      <div class="about__grid">
+        <figure class="about__photo">
+          <img src="assets/denis-portrait.jpg" alt="Denis Roman — CEO We Digital" loading="lazy" width="1600" height="1200">
+        </figure>
+        <div>
+          <p class="display about__lead">Building an agency that's reshaping the communications market of Central Asia.</p>
+          <div class="about__body">
+            <p class="body-lg">
+              12+ years in marketing and creative. Co-founder of <strong>We Digital</strong> — one of the largest
+              communications agencies in Uzbekistan. We work across SMM, influencer marketing,
+              UGC, special projects, CSR and creative for country-scale brands.
+            </p>
+          </div>
+        </div>
       </div>
 
       <div class="stats">
@@ -497,6 +553,14 @@
           <h3 class="card__title">AI</h3>
           <p class="card__text">AI in marketing production and content factories. Educational AI initiatives for the industry and emerging-market teams.</p>
         </div>
+      </div>
+
+      <div class="speaking__recent">
+        <span class="label">Recent:</span>
+        <span class="venue">WIUT</span><span class="dot">·</span>
+        <span class="venue">Nazarbayev University</span><span class="dot">·</span>
+        <span class="venue">IT Park</span><span class="dot">·</span>
+        <span class="venue">Tashkent Marketing Forum 2026</span>
       </div>
     </div>
   </section>
