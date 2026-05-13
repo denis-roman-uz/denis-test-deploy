@@ -188,13 +188,47 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 64px;
+      align-items: start;
     }
-    @media (max-width: 768px) { .about__grid { grid-template-columns: 1fr; gap: 32px; } }
+    @media (max-width: 768px) { .about__grid { grid-template-columns: 1fr; gap: 40px; } }
     .about__lead {
       font-family: var(--wd-font-display);
       font-size: clamp(32px, 4vw, 56px);
       line-height: 1.0;
       text-transform: uppercase;
+      margin-top: 32px;
+    }
+    .about__photo {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border-radius: 16px;
+      background: var(--wd-graphite);
+    }
+    .about__photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 600ms var(--wd-ease-out);
+    }
+    .about__photo:hover img { transform: scale(1.03); }
+    .about__photo::after {
+      content: "Paris · 2023";
+      position: absolute;
+      left: 16px;
+      bottom: 14px;
+      font-family: var(--wd-font-body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.92);
+      background: rgba(0,0,0,0.45);
+      padding: 6px 10px;
+      border-radius: 4px;
+      backdrop-filter: blur(6px);
     }
 
     /* ===== STATS ===== */
@@ -350,11 +384,12 @@
       <p class="overline">About</p>
       <h2 class="display section__title">Кто я</h2>
       <div class="about__grid">
+        <figure class="about__photo">
+          <img src="assets/denis-portrait.jpg" alt="Denis Roman — CEO We Digital" loading="lazy" width="1600" height="1200">
+        </figure>
         <div>
           <p class="display about__lead">Строю агентство, которое меняет рынок коммуникаций Центральной Азии.</p>
-        </div>
-        <div>
-          <p class="body-lg">
+          <p class="body-lg" style="margin-top:32px;">
             12+ лет в маркетинге и креативе. Сооснователь <strong>We Digital</strong> — одного из крупнейших
             коммуникационных агентств в Узбекистане. Работаем со SMM, инфлюенс-маркетингом,
             UGC, спецпроектами, CSR и креативом для брендов масштаба страны.
