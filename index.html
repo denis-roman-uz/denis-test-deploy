@@ -1,1 +1,539 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>Денис тест</title></head><body><h1>Привет, я Денис</h1></body></html>
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Denis Roman — CEO We Digital</title>
+  <meta name="description" content="Denis Roman — CEO и со-фаундер коммуникационного агентства We Digital. Ташкент / Центральная Азия.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --wd-canvas:   #000000;
+      --wd-ink:      #0A0A0A;
+      --wd-graphite: #1A1A1A;
+      --wd-smoke:    #2B2B2B;
+      --wd-paper:    #F5F4EE;
+      --wd-bone:     #FFFFFF;
+      --wd-festive:  #F4E84A;
+
+      --wd-violet-500: #B14DFF;
+      --wd-violet-700: #8B2BD9;
+      --wd-violet-100: #F2DBFF;
+
+      --wd-text-primary:   #FFFFFF;
+      --wd-text-secondary: rgba(255,255,255,0.72);
+      --wd-text-muted:     rgba(255,255,255,0.52);
+
+      --wd-border:        rgba(255,255,255,0.18);
+      --wd-border-strong: rgba(255,255,255,0.40);
+
+      --wd-gradient-hero: linear-gradient(90deg, #B14DFF 0%, #E26DFF 50%, #C77DFF 100%);
+
+      --wd-font-display: "Bebas Neue", "Anton", "Oswald", sans-serif;
+      --wd-font-body:    "Inter", "Helvetica Neue", system-ui, sans-serif;
+
+      --wd-dur:      240ms;
+      --wd-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--wd-canvas);
+      color: var(--wd-text-primary);
+      font-family: var(--wd-font-body);
+      font-size: 16px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--wd-violet-500); }
+
+    .wd-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    @media (max-width: 768px) { .wd-container { padding: 0 20px; } }
+
+    .display {
+      font-family: var(--wd-font-display);
+      font-weight: 400;
+      text-transform: uppercase;
+      line-height: 0.92;
+      letter-spacing: -0.01em;
+      margin: 0;
+    }
+    .grad {
+      background: var(--wd-gradient-hero);
+      -webkit-background-clip: text;
+              background-clip: text;
+      -webkit-text-fill-color: transparent;
+              color: transparent;
+    }
+    .overline {
+      font-family: var(--wd-font-body);
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 1.6;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--wd-text-muted);
+      margin: 0 0 24px;
+    }
+    .body-lg { font-size: 20px; line-height: 1.45; color: var(--wd-text-secondary); }
+    .body-md { font-size: 16px; line-height: 1.55; color: var(--wd-text-secondary); }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: sticky; top: 0; z-index: 40;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--wd-border);
+    }
+    .nav__inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .nav__brand {
+      font-family: var(--wd-font-display);
+      font-size: 28px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .nav__links { display: flex; gap: 32px; }
+    .nav__links a {
+      font-size: 14px;
+      color: var(--wd-text-secondary);
+      transition: color var(--wd-dur) var(--wd-ease-out);
+    }
+    .nav__links a:hover { color: var(--wd-bone); }
+    @media (max-width: 640px) { .nav__links { display: none; } }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 96px 0 128px;
+      border-bottom: 1px solid var(--wd-border);
+    }
+    .hero__name {
+      font-size: clamp(72px, 13vw, 200px);
+      line-height: 0.88;
+    }
+    .hero__role {
+      margin-top: 24px;
+      font-family: var(--wd-font-display);
+      font-size: clamp(28px, 4vw, 56px);
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+    .hero__lead {
+      max-width: 720px;
+      margin-top: 32px;
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.5;
+      color: var(--wd-text-secondary);
+    }
+    .hero__cta {
+      display: flex; flex-wrap: wrap; gap: 16px;
+      margin-top: 40px;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      height: 52px; padding: 0 28px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      font-family: var(--wd-font-display);
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      transition: background var(--wd-dur), color var(--wd-dur), border-color var(--wd-dur), box-shadow var(--wd-dur);
+    }
+    .btn--primary {
+      background: var(--wd-violet-500);
+      color: var(--wd-bone);
+    }
+    .btn--primary:hover {
+      background: var(--wd-violet-700);
+      box-shadow: 0 24px 64px 0 rgba(177,77,255,0.25);
+      color: var(--wd-bone);
+    }
+    .btn--ghost {
+      background: transparent;
+      color: var(--wd-bone);
+      border-color: var(--wd-border-strong);
+    }
+    .btn--ghost:hover { border-color: var(--wd-bone); color: var(--wd-bone); }
+
+    /* ===== SECTION ===== */
+    .section { padding: 96px 0; border-bottom: 1px solid var(--wd-border); }
+    .section--light { background: var(--wd-paper); color: #0A0A0A; }
+    .section--light .body-lg,
+    .section--light .body-md { color: rgba(10,10,10,0.72); }
+    .section--light .overline { color: rgba(10,10,10,0.52); }
+    .section--light .card { background: var(--wd-bone); border-color: rgba(10,10,10,0.10); }
+    .section--light .card__label { color: rgba(10,10,10,0.52); }
+    .section--light .card__text { color: rgba(10,10,10,0.72); }
+    .section__title {
+      font-size: clamp(44px, 7vw, 96px);
+      margin-bottom: 48px;
+    }
+
+    /* ===== ABOUT ===== */
+    .about__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+    }
+    @media (max-width: 768px) { .about__grid { grid-template-columns: 1fr; gap: 32px; } }
+    .about__lead {
+      font-family: var(--wd-font-display);
+      font-size: clamp(32px, 4vw, 56px);
+      line-height: 1.0;
+      text-transform: uppercase;
+    }
+
+    /* ===== STATS ===== */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 64px;
+    }
+    @media (max-width: 768px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+    .stat {
+      padding: 32px 28px;
+      background: var(--wd-ink);
+      border: 1px solid var(--wd-border);
+      border-radius: 16px;
+    }
+    .stat__num {
+      font-family: var(--wd-font-display);
+      font-size: 72px;
+      line-height: 1.0;
+      letter-spacing: -0.01em;
+    }
+    .stat__label {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--wd-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ===== LIST GRIDS ===== */
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      padding: 28px;
+      background: var(--wd-ink);
+      border: 1px solid var(--wd-border);
+      border-radius: 16px;
+      transition: border-color var(--wd-dur), transform var(--wd-dur);
+    }
+    .card:hover { border-color: var(--wd-violet-500); transform: translateY(-2px); }
+    .card__title {
+      font-family: var(--wd-font-display);
+      font-size: 28px;
+      line-height: 1.1;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+    .card__label {
+      font-size: 12px;
+      color: var(--wd-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+    .card__text { font-size: 15px; line-height: 1.5; color: var(--wd-text-secondary); margin: 0; }
+
+    /* ===== AWARDS BLOCK (festive yellow — единственное место для жёлтого) ===== */
+    .awards {
+      background: var(--wd-festive);
+      color: #0A0A0A;
+      padding: 96px 0;
+      border-bottom: 1px solid #0A0A0A;
+    }
+    .awards .section__title { color: #0A0A0A; }
+    .awards .overline { color: rgba(10,10,10,0.6); }
+    .awards__list { display: flex; flex-direction: column; gap: 0; margin-top: 24px; }
+    .award {
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: 16px;
+      padding: 24px 0;
+      border-top: 1px solid rgba(10,10,10,0.18);
+      font-family: var(--wd-font-display);
+      text-transform: uppercase;
+    }
+    .award:last-child { border-bottom: 1px solid rgba(10,10,10,0.18); }
+    .award__name { font-size: clamp(24px, 3vw, 40px); line-height: 1.05; }
+    .award__year {
+      font-family: var(--wd-font-body);
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      color: rgba(10,10,10,0.7);
+      white-space: nowrap;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact__title {
+      font-size: clamp(56px, 10vw, 140px);
+      line-height: 0.95;
+    }
+    .contact__row {
+      display: flex; flex-wrap: wrap; gap: 32px;
+      margin-top: 48px;
+      font-family: var(--wd-font-display);
+      font-size: clamp(22px, 3vw, 32px);
+      text-transform: uppercase;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 32px 0;
+    }
+    footer .wd-container {
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+      font-size: 13px;
+      color: var(--wd-text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wd-container nav__inner">
+      <div class="nav__brand">Denis<span class="grad">.</span>Roman</div>
+      <div class="nav__links">
+        <a href="#about">about</a>
+        <a href="#work">work</a>
+        <a href="#awards">awards</a>
+        <a href="#speaking">speaking</a>
+        <a href="#contact">contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wd-container">
+      <p class="overline">CEO &amp; Co-founder · Tashkent, Uzbekistan</p>
+      <h1 class="display hero__name">Denis <span class="grad">Roman</span></h1>
+      <p class="display hero__role">Future-thinking marketing<br>from Central Asia</p>
+      <p class="hero__lead">
+        Со-фаундер и CEO <strong>We Digital</strong> — коммуникационного агентства из Ташкента.
+        30 человек, 50+ брендов, среди клиентов Uzum, Yandex, Nestle, Lukoil, Beeline, Uztelecom.
+        Жюри международных фестивалей. Победитель UK&nbsp;Alumni&nbsp;Awards.
+      </p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#contact">Let's talk</a>
+        <a class="btn btn--ghost" href="#work">What we do</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="wd-container">
+      <p class="overline">About</p>
+      <h2 class="display section__title">Кто я</h2>
+      <div class="about__grid">
+        <div>
+          <p class="display about__lead">Строю агентство, которое меняет рынок коммуникаций Центральной Азии.</p>
+        </div>
+        <div>
+          <p class="body-lg">
+            12+ лет в маркетинге и креативе. Сооснователь <strong>We Digital</strong> — одного из крупнейших
+            коммуникационных агентств в Узбекистане. Работаем со SMM, инфлюенс-маркетингом,
+            UGC, спецпроектами, CSR и креативом для брендов масштаба страны.
+          </p>
+          <p class="body-md" style="margin-top:20px;">
+            Параллельно развиваем образовательные AI-проекты, офлайн-ивент для креаторов
+            <strong>Content Weekend</strong>, и стартап-платформу блогеров под Центральную Азию.
+          </p>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat__num grad">30+</div>
+          <div class="stat__label">Команда</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num grad">50+</div>
+          <div class="stat__label">Брендов в работе</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num grad">500+</div>
+          <div class="stat__label">База блогеров CA</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num grad">12</div>
+          <div class="stat__label">Лет в индустрии</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="section" id="work">
+    <div class="wd-container">
+      <p class="overline">What We Digital does</p>
+      <h2 class="display section__title">Шесть направлений</h2>
+      <div class="grid-3">
+        <div class="card">
+          <p class="card__label">01</p>
+          <h3 class="card__title">Creative</h3>
+          <p class="card__text">Стратегия, концепции, спецпроекты для FMCG, финтеха, телекома и ритейла.</p>
+        </div>
+        <div class="card">
+          <p class="card__label">02</p>
+          <h3 class="card__title">Digital</h3>
+          <p class="card__text">Перформанс, brand-кампании, продакшн, AI-контент в продакшне.</p>
+        </div>
+        <div class="card">
+          <p class="card__label">03</p>
+          <h3 class="card__title">Branding</h3>
+          <p class="card__text">Айдентика, дизайн-системы, упаковка, локальная адаптация международных брендов.</p>
+        </div>
+        <div class="card">
+          <p class="card__label">04</p>
+          <h3 class="card__title">Influence / UGC</h3>
+          <p class="card__text">От брифа до отчёта. Своя база 500+ блогеров. Content Factory под брендов.</p>
+        </div>
+        <div class="card">
+          <p class="card__label">05</p>
+          <h3 class="card__title">Social media &amp; content</h3>
+          <p class="card__text">SMM, контент-фабрика, ежедневный продакшн для крупных рекламодателей UZ.</p>
+        </div>
+        <div class="card">
+          <p class="card__label">06</p>
+          <h3 class="card__title">CSR &amp; PR</h3>
+          <p class="card__text">Социальные кампании, спецпроекты, partnership с международными брендами и NGO.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS (festive yellow block) -->
+  <section class="awards" id="awards">
+    <div class="wd-container">
+      <p class="overline">Personal recognition</p>
+      <h2 class="display section__title">Awards</h2>
+      <div class="awards__list">
+        <div class="award">
+          <div class="award__name">Westminster Alumni Entrepreneurial Award</div>
+          <div class="award__year">Winner</div>
+        </div>
+        <div class="award">
+          <div class="award__name">UK Alumni Awards</div>
+          <div class="award__year">Winner · 2024</div>
+        </div>
+        <div class="award">
+          <div class="award__name">Special Award — British Ambassador</div>
+          <div class="award__year">2024</div>
+        </div>
+        <div class="award">
+          <div class="award__name">UK Alumni Awards — Entrepreneurial Category</div>
+          <div class="award__year">Only finalist from Uzbekistan</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JURY -->
+  <section class="section section--light" id="jury">
+    <div class="wd-container">
+      <p class="overline">International juries</p>
+      <h2 class="display section__title">Jury member</h2>
+      <div class="grid-3">
+        <div class="card"><h3 class="card__title">PHNX</h3><p class="card__text">International creative awards.</p></div>
+        <div class="card"><h3 class="card__title">MAD STARS</h3><p class="card__text">Busan, Korea. Preliminary jury, 2026.</p></div>
+        <div class="card"><h3 class="card__title">Baku Flames</h3><p class="card__text">Caucasus regional festival.</p></div>
+        <div class="card"><h3 class="card__title">White Square</h3><p class="card__text">Eastern Europe creative festival.</p></div>
+        <div class="card"><h3 class="card__title">TAF!</h3><p class="card__text">Tashkent Advertising Festival.</p></div>
+        <div class="card"><h3 class="card__title">E+ Awards Central Asia</h3><p class="card__text">Effectiveness, Central Asia.</p></div>
+        <div class="card"><h3 class="card__title">Young Lions Georgia</h3><p class="card__text">National selection for Cannes Young Lions.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEAKING -->
+  <section class="section" id="speaking">
+    <div class="wd-container">
+      <p class="overline">Speaking &amp; lectures</p>
+      <h2 class="display section__title">Speaking</h2>
+      <div class="grid-2">
+        <div class="card">
+          <p class="card__label">WIUT · Tashkent</p>
+          <h3 class="card__title">How to Make Money in Marketing &amp; Creativity in Uzbekistan</h3>
+          <p class="card__text">Открытая лекция для студентов Westminster International University.</p>
+        </div>
+        <div class="card">
+          <p class="card__label">Nazarbayev University · Astana</p>
+          <h3 class="card__title">Creativity as Driver for Sustainable Growth</h3>
+          <p class="card__text">Выступление + три кейса We Digital для студентов и преподавателей.</p>
+        </div>
+        <div class="card">
+          <p class="card__label">IT Park · Tashkent</p>
+          <h3 class="card__title">Creator Economy in Central Asia</h3>
+          <p class="card__text">Панель на CMO's Breakfast — как растёт creator economy в регионе.</p>
+        </div>
+        <div class="card">
+          <p class="card__label">Tashkent Marketing Forum 2026</p>
+          <h3 class="card__title">AI &amp; IT Marketing track curator</h3>
+          <p class="card__text">Курировал секцию по AI и IT-маркетингу для индустрии UZ.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <section class="section">
+    <div class="wd-container">
+      <p class="overline">Selected clients</p>
+      <h2 class="display section__title">Trusted by</h2>
+      <p class="body-lg" style="max-width:920px;">
+        Uzum Bank · Uzum Market · Yandex Plus · Yandex Go · Yandex Алиса · Yandex Split ·
+        Nestle · Lukoil · Beeline · Uztelecom · UzPost · TBC · Bionorica · Paynet ·
+        Tegeta Motors · Murad Buildings · Alif · Hadat Cosmetics · Sherin · Ipoteka Bank.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="wd-container">
+      <p class="overline">Get in touch</p>
+      <h2 class="display contact__title">Let's make<br>cool things together<span class="grad">!</span></h2>
+      <div class="contact__row">
+        <a href="mailto:d.roman@wedigital.uz">d.roman@wedigital.uz</a>
+        <a href="https://wedigital.uz" target="_blank" rel="noopener">wedigital.uz</a>
+      </div>
+      <p class="body-md" style="margin-top:32px;max-width:640px;">
+        Tashkent, Uzbekistan · Открыт к жюри, выступлениям, партнёрствам с международными брендами и фестивалями.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wd-container">
+      <span>Denis Roman · We Digital, 2026</span>
+      <span>Tashkent · Central Asia</span>
+    </div>
+  </footer>
+
+</body>
+</html>
