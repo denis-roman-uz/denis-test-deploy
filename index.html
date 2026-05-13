@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Denis Roman — CEO We Digital</title>
-  <meta name="description" content="Denis Roman — CEO и со-фаундер коммуникационного агентства We Digital. Ташкент / Центральная Азия.">
+  <meta name="description" content="Denis Roman — CEO and co-founder of We Digital, a communications agency from Tashkent, Central Asia.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -184,36 +184,18 @@
     }
 
     /* ===== ABOUT ===== */
-    .about__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: start;
-    }
-    @media (max-width: 768px) { .about__grid { grid-template-columns: 1fr; gap: 40px; } }
     .about__lead {
       font-family: var(--wd-font-display);
-      font-size: clamp(32px, 4vw, 56px);
+      font-size: clamp(32px, 4.5vw, 64px);
       line-height: 1.0;
       text-transform: uppercase;
-      margin-top: 32px;
+      max-width: 1040px;
     }
-    .about__photo {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
-      border-radius: 16px;
-      background: var(--wd-graphite);
+    .about__body {
+      max-width: 760px;
+      margin-top: 40px;
     }
-    .about__photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 600ms var(--wd-ease-out);
-    }
-    .about__photo:hover img { transform: scale(1.03); }
+    .about__body p + p { margin-top: 20px; }
 
     /* ===== STATS ===== */
     .stats {
@@ -336,8 +318,8 @@
       <div class="nav__brand">Denis<span class="grad">.</span>Roman</div>
       <div class="nav__links">
         <a href="#about">about</a>
-        <a href="#work">work</a>
         <a href="#awards">awards</a>
+        <a href="#jury">jury</a>
         <a href="#speaking">speaking</a>
         <a href="#contact">contact</a>
       </div>
@@ -351,13 +333,13 @@
       <h1 class="display hero__name">Denis <span class="grad">Roman</span></h1>
       <p class="display hero__role">Future-thinking marketing<br>from Central Asia</p>
       <p class="hero__lead">
-        Со-фаундер и CEO <strong>We Digital</strong> — коммуникационного агентства из Ташкента.
-        30 человек, 50+ брендов, среди клиентов Uzum, Yandex, Nestle, Lukoil, Beeline, Uztelecom.
-        Жюри международных фестивалей. Победитель UK&nbsp;Alumni&nbsp;Awards.
+        Co-founder and CEO of <strong>We Digital</strong> — a communications agency based in Tashkent.
+        30 people, 50+ brands, including Uzum, Yandex, Nestle, Lukoil, Beeline and Uztelecom.
+        Jury member of international festivals. UK&nbsp;Alumni&nbsp;Awards winner.
       </p>
       <div class="hero__cta">
         <a class="btn btn--primary" href="#contact">Let's talk</a>
-        <a class="btn btn--ghost" href="#work">What we do</a>
+        <a class="btn btn--ghost" href="#about">About me</a>
       </div>
     </div>
   </header>
@@ -366,81 +348,38 @@
   <section class="section" id="about">
     <div class="wd-container">
       <p class="overline">About</p>
-      <h2 class="display section__title">Кто я</h2>
-      <div class="about__grid">
-        <figure class="about__photo">
-          <img src="assets/denis-portrait.jpg" alt="Denis Roman — CEO We Digital" loading="lazy" width="1600" height="1200">
-        </figure>
-        <div>
-          <p class="display about__lead">Строю агентство, которое меняет рынок коммуникаций Центральной Азии.</p>
-          <p class="body-lg" style="margin-top:32px;">
-            12+ лет в маркетинге и креативе. Сооснователь <strong>We Digital</strong> — одного из крупнейших
-            коммуникационных агентств в Узбекистане. Работаем со SMM, инфлюенс-маркетингом,
-            UGC, спецпроектами, CSR и креативом для брендов масштаба страны.
-          </p>
-          <p class="body-md" style="margin-top:20px;">
-            Параллельно развиваем образовательные AI-проекты, офлайн-ивент для креаторов
-            <strong>Content Weekend</strong>, и стартап-платформу блогеров под Центральную Азию.
-          </p>
-        </div>
+      <h2 class="display section__title">Who I am</h2>
+
+      <p class="display about__lead">Building an agency that's reshaping the communications market of Central Asia.</p>
+
+      <div class="about__body">
+        <p class="body-lg">
+          12+ years in marketing and creative. Co-founder of <strong>We Digital</strong> — one of the largest
+          communications agencies in Uzbekistan. We work across SMM, influencer marketing,
+          UGC, special projects, CSR and creative for country-scale brands.
+        </p>
+        <p class="body-md">
+          In parallel, I'm building AI-driven educational projects, the offline event for creators
+          <strong>Content Weekend</strong>, and a startup creator platform for Central Asia.
+        </p>
       </div>
 
       <div class="stats">
         <div class="stat">
           <div class="stat__num grad">30+</div>
-          <div class="stat__label">Команда</div>
+          <div class="stat__label">Team</div>
         </div>
         <div class="stat">
           <div class="stat__num grad">50+</div>
-          <div class="stat__label">Брендов в работе</div>
+          <div class="stat__label">Brands in work</div>
         </div>
         <div class="stat">
           <div class="stat__num grad">500+</div>
-          <div class="stat__label">База блогеров CA</div>
+          <div class="stat__label">Creator base CA</div>
         </div>
         <div class="stat">
           <div class="stat__num grad">12</div>
-          <div class="stat__label">Лет в индустрии</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WORK -->
-  <section class="section" id="work">
-    <div class="wd-container">
-      <p class="overline">What We Digital does</p>
-      <h2 class="display section__title">Шесть направлений</h2>
-      <div class="grid-3">
-        <div class="card">
-          <p class="card__label">01</p>
-          <h3 class="card__title">Creative</h3>
-          <p class="card__text">Стратегия, концепции, спецпроекты для FMCG, финтеха, телекома и ритейла.</p>
-        </div>
-        <div class="card">
-          <p class="card__label">02</p>
-          <h3 class="card__title">Digital</h3>
-          <p class="card__text">Перформанс, brand-кампании, продакшн, AI-контент в продакшне.</p>
-        </div>
-        <div class="card">
-          <p class="card__label">03</p>
-          <h3 class="card__title">Branding</h3>
-          <p class="card__text">Айдентика, дизайн-системы, упаковка, локальная адаптация международных брендов.</p>
-        </div>
-        <div class="card">
-          <p class="card__label">04</p>
-          <h3 class="card__title">Influence / UGC</h3>
-          <p class="card__text">От брифа до отчёта. Своя база 500+ блогеров. Content Factory под брендов.</p>
-        </div>
-        <div class="card">
-          <p class="card__label">05</p>
-          <h3 class="card__title">Social media &amp; content</h3>
-          <p class="card__text">SMM, контент-фабрика, ежедневный продакшн для крупных рекламодателей UZ.</p>
-        </div>
-        <div class="card">
-          <p class="card__label">06</p>
-          <h3 class="card__title">CSR &amp; PR</h3>
-          <p class="card__text">Социальные кампании, спецпроекты, partnership с международными брендами и NGO.</p>
+          <div class="stat__label">Years in industry</div>
         </div>
       </div>
     </div>
@@ -483,7 +422,7 @@
         <div class="card"><h3 class="card__title">Baku Flames</h3><p class="card__text">Caucasus regional festival.</p></div>
         <div class="card"><h3 class="card__title">White Square</h3><p class="card__text">Eastern Europe creative festival.</p></div>
         <div class="card"><h3 class="card__title">TAF!</h3><p class="card__text">Tashkent Advertising Festival.</p></div>
-        <div class="card"><h3 class="card__title">E+ Awards Central Asia</h3><p class="card__text">Effectiveness, Central Asia.</p></div>
+        <div class="card"><h3 class="card__title">E+ Awards Central Asia</h3><p class="card__text">Effectiveness awards, Central Asia.</p></div>
         <div class="card"><h3 class="card__title">Young Lions Georgia</h3><p class="card__text">National selection for Cannes Young Lions.</p></div>
       </div>
     </div>
@@ -498,22 +437,22 @@
         <div class="card">
           <p class="card__label">WIUT · Tashkent</p>
           <h3 class="card__title">How to Make Money in Marketing &amp; Creativity in Uzbekistan</h3>
-          <p class="card__text">Открытая лекция для студентов Westminster International University.</p>
+          <p class="card__text">Open lecture for students of Westminster International University in Tashkent.</p>
         </div>
         <div class="card">
           <p class="card__label">Nazarbayev University · Astana</p>
           <h3 class="card__title">Creativity as Driver for Sustainable Growth</h3>
-          <p class="card__text">Выступление + три кейса We Digital для студентов и преподавателей.</p>
+          <p class="card__text">Keynote and three We Digital cases for students and faculty.</p>
         </div>
         <div class="card">
           <p class="card__label">IT Park · Tashkent</p>
           <h3 class="card__title">Creator Economy in Central Asia</h3>
-          <p class="card__text">Панель на CMO's Breakfast — как растёт creator economy в регионе.</p>
+          <p class="card__text">Panel at the CMO's Breakfast on how creator economy is growing across the region.</p>
         </div>
         <div class="card">
           <p class="card__label">Tashkent Marketing Forum 2026</p>
           <h3 class="card__title">AI &amp; IT Marketing track curator</h3>
-          <p class="card__text">Курировал секцию по AI и IT-маркетингу для индустрии UZ.</p>
+          <p class="card__text">Curated the AI and IT marketing track for the UZ industry forum.</p>
         </div>
       </div>
     </div>
@@ -525,7 +464,7 @@
       <p class="overline">Selected clients</p>
       <h2 class="display section__title">Trusted by</h2>
       <p class="body-lg" style="max-width:920px;">
-        Uzum Bank · Uzum Market · Yandex Plus · Yandex Go · Yandex Алиса · Yandex Split ·
+        Uzum Bank · Uzum Market · Yandex Plus · Yandex Go · Yandex Alisa · Yandex Split ·
         Nestle · Lukoil · Beeline · Uztelecom · UzPost · TBC · Bionorica · Paynet ·
         Tegeta Motors · Murad Buildings · Alif · Hadat Cosmetics · Sherin · Ipoteka Bank.
       </p>
@@ -542,7 +481,7 @@
         <a href="https://wedigital.uz" target="_blank" rel="noopener">wedigital.uz</a>
       </div>
       <p class="body-md" style="margin-top:32px;max-width:640px;">
-        Tashkent, Uzbekistan · Открыт к жюри, выступлениям, партнёрствам с международными брендами и фестивалями.
+        Tashkent, Uzbekistan · Open to jury invitations, speaking, and partnerships with international brands and festivals.
       </p>
     </div>
   </section>
