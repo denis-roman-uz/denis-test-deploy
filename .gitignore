@@ -1,1 +1,8 @@
 .vercel
+
+# Служебные HTML для рендера статичных картинок (favicon/OG) через headless Chrome
+og.html
+apple-icon.html
+
+# Промежуточный PNG для OG (используем JPG)
+assets/og.png
